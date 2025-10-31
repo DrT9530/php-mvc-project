@@ -1,8 +1,10 @@
 <?php
 namespace App\Controllers;
-use App\Core\Controller;
 
-class HomeController extends Controller {
+use App\Core\Controller; // <-- TAMBAHKAN INI
+
+class HomeController extends Controller
+{
     public function index() {
         $data = [
             'title' => 'Home Page',

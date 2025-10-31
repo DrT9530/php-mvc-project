@@ -1,9 +1,11 @@
 <?php
 namespace App\Controllers;
-use App\Core\Controller;
-use App\Models\User;
 
-class UserController extends Controller {
+use App\Models\User;
+use App\Core\Controller; // <-- TAMBAHKAN INI
+
+class UserController extends Controller
+{
     private $userModel;
     
     public function __construct() {
