@@ -3,6 +3,6 @@ return [
     'host' => 'localhost',
     'dbname' => 'mvc_db',
     'username' => 'root',
-    'password' => '',
+    'password' => 'athallah0905',
     'charset' => 'utf8mb4'
 ];
