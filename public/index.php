@@ -1,22 +1,17 @@
 <?php
-// Autoloader sederhana
-spl_autoload_register(function($class) {
-    $classPath = str_replace(['App\\', '\\'], ['', '/'], $class);
-    $baseDir = dirname(__DIR__) . '/App/'; // tetap ke folder app dari public/
-    $file = $baseDir . $classPath . '.php';
-    
-    if (file_exists($file)) {
-        require_once $file;
-    } else {
-        error_log("File not found class: $class ($file)");
-    }
-});
 
-// Load core files
-require_once __DIR__ . '/../App/Core/Database.php';
-require_once __DIR__ . '/../App/Core/Router.php';
+// 1. Tampilkan semua error untuk debugging
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
 
-// Inisialisasi Router
+// 2. INI ADALAH SATU-SATUNYA LOADER YANG ANDA BUTUHKAN
+// Ini akan memuat file vendor/autoload.php yang dibuat oleh Composer
+require_once __DIR__ . '/../vendor/autoload.php';
+
+// 3. Gunakan 'use' statement untuk memanggil class dari namespace-nya
+use App\Core\Router;
+
+// 4. Inisialisasi Router
 $router = new Router();
 
 // Define Routes
